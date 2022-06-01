@@ -15,7 +15,9 @@ Estamos usando "Jest" como herramienta de pruebas.
 
 Para **instalar**, dentro de la carpeta del proyecto usa el comando: `npm i -D eslint`.
 
-Para **inicializar** eslint usa el comando `npx eslint --init`.
+Para **inicializar** eslint usa el comando `npx eslint --init` o `npm init @eslint/config`.
+
+
 
 
 
