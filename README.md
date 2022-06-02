@@ -18,7 +18,13 @@ Para **instalar**, dentro de la carpeta del proyecto usa el comando: `npm i -D e
 Para **inicializar** eslint usa el comando `npx eslint --init` o `npm init @eslint/config`.
 
 
+## Correr las pruebas en Jest:
 
+Para correr en general, este proyecto esta configurado para hacerlo con el comando:
+`npm run test`
+
+Para correr una prueba en especifico usa el comando:
+`npm run test -- nombreDelArchivo.js`
 
 
 
