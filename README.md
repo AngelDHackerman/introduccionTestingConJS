@@ -27,5 +27,9 @@ Para correr una prueba en especifico usa el comando:
 `npm run test -- nombreDelArchivo.js`
 
 
+## Coverage report
 
+Nos muestra en un documento index.html las pruebas que hemos hecho y las que nos pueden faltar.
+
+Para ver el coverage report ejecutal el comando: `npm run test -- --coverage`
 
