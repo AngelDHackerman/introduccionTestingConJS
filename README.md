@@ -31,5 +31,7 @@ Para correr una prueba en especifico usa el comando:
 
 Nos muestra en un documento index.html las pruebas que hemos hecho y las que nos pueden faltar.
 
+Hay que tener un **equilibrio** porque solo nos dice donde SI y donde NO hemos hecho las pruebas **pero no dice si son realmente necesarias de hacer.**
+
 Para ver el coverage report ejecutal el comando: `npm run test -- --coverage`
 
