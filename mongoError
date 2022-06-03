@@ -1,0 +1,24 @@
+# Al ejecutar el siguiente comando: 
+
+docker-compose up -d mongo
+
+# La consola nos escupe este resultado: 
+
+ERROR: for mongo  Cannot start service mongo: driver failed programming external connectivity on endpoint api_mongo_1 Error starting userland proxy: listen tcp4 0.0.0.0:27017: bind: address already in use
+ERROR: Encountered errors while bringing up the project.
+
+
+# Podemos ejecutar el comandos: 
+
+docker ps -a 
+
+# Nos devuelve algo como: 
+
+13adbb956152   mongo:4.4   "docker-entrypoint.s…"   9 minutes ago   Created             api_mongo_1
+
+# Ejecutamos: 
+
+docker stop [id del contenedor]
+docker rm [id del contenedor]
+
+

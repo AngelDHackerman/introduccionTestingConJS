@@ -35,3 +35,16 @@ Hay que tener un **equilibrio** porque solo nos dice donde SI y donde NO hemos h
 
 Para ver el coverage report ejecutal el comando: `npm run test -- --coverage`
 
+
+## Proyecto API
+
+En la carpeta API, descargamos archivos de configuracion para crear nuestro proyecto de pruebas.
+
+1. Debes crear un archivo llamado .env
+
+2. Debes tener instalado docker en tu ordenador
+
+3. Teniendo esto en la termina, ubicado en la carpeta de API hay que ejecutar el comando: `docker-compose up -d mongo`
+
+4. Verificamos que ya esta corriendo con `docker-compose ps`. Para abajar los servicios usamos el comando: `docker-compose down`.
+
