@@ -48,3 +48,5 @@ En la carpeta API, descargamos archivos de configuracion para crear nuestro proy
 
 4. Verificamos que ya esta corriendo con `docker-compose ps`. Para abajar los servicios usamos el comando: `docker-compose down`.
 
+
+
