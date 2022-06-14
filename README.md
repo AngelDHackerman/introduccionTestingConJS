@@ -50,3 +50,28 @@ En la carpeta API, descargamos archivos de configuracion para crear nuestro proy
 
 
 
+## Solucionando error de puerto 27017 "already used"
+
+Si la consola te lanza un error como este:
+
+`ERROR: for mongo  Cannot start service mongo: driver failed programming external connectivity on endpoint api_mongo_1 Error starting userland proxy: listen tcp4 0.0.0.0:27017: bind: address already in use ERROR: Encountered errors while bringing up the project`
+
+La solucion esta facil, solo debes ejecutar los siguientes comandos:
+
+(Si no tienes instalado netstat en Ubuntu):
+
+`sudo apt install net-tools   `
+
+Luego corres el siguiente comando:
+
+`sudo lsof -i -P -n | grep 27017`
+
+Y por ultimo corres el siguiente comando:
+
+`sudo kill <process ID> `
+
+(El process Id es el numero a la par “process name” de lo que te devolvio el comando que comienza con lsof), mi caso era el 1242. Ejem:
+
+mongod     1242         mongodb   11u  IPv4
+y listo! Luego solo corre el `docker-compose up -d mongo` y deberia funcionar
+

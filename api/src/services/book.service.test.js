@@ -7,10 +7,13 @@ describe('Test for BookService', () => {
   });
 
   describe('test for getBooks', () => {
-    // Arrange
-    // Act
-    const books = service.getBooks();
-    // Assert
-    expect(books.lenght).toEqual();
+    test('should return a list book', async () => {
+      // Arrange
+      // Act
+      const books = await service.getBooks({});
+      console.log(books);
+      // Assert
+      expect(books.lenght).toEqual(2);
+    });
   });
 });
