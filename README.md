@@ -64,7 +64,7 @@ La solucion esta facil, solo debes ejecutar los siguientes comandos:
 
 Luego corres el siguiente comando:
 
-`sudo lsof -i -P -n | grep 27017`
+`sudo lsof -i -Pn | grep 27017`
 
 Y por ultimo corres el siguiente comando:
 
