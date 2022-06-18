@@ -1,10 +1,11 @@
+const mockGetAll = jest.fn();
+
 const request = require('supertest'); // supertest es la libreria que instalamos
 
 const createApp = require('../src/app');
+const { generateManyBooks } = require('../src/fakes/book.fake');
 
-const mockGetAll = jest.fn();
-
-jest.mock('../src/lib/mongo.lib.js', () => jest.fn().mockImplementatio(() => ({
+jest.mock('../src/lib/mongo.lib', () => jest.fn().mockImplementation(() => ({
   getAll: mockGetAll,
   create: () => {},
 })));
@@ -23,12 +24,19 @@ describe('Test for Books', () => {
   });
 
   describe('test for [GET] /api/v1/books', () => {
-    test('should return a list books', () => request(app)
-      .get('/api/v1/books') // ! el "/" al principio del path de la API es OBLIGATORIO.
-      .expect(200)
-      .then(({ body }) => {
-        console.log(body);
-        expect(body.length).toEqual(1);
-      }));
+    test('should return a list books', () => {
+      // Arrange
+      const fakeBooks = generateManyBooks(3);
+      mockGetAll.mockResolvedValue(fakeBooks);
+      // Act
+      return request(app)
+        .get('/api/v1/books')
+        .expect(200)
+        .then(({ body }) => {
+          console.log(body);
+          // Assert
+          expect(body.length).toEqual(fakeBooks.length);
+        });
+    });
   });
 });
